@@ -1,56 +1,64 @@
-import SibApiV3Sdk from 'sib-api-v3-typescript'
+async function checkIfContactExistsInList(email, listId) {
+	const apiKey = import.meta.env.VITE_SENDINBLUE_API_KEY
 
-async function checkIfContactExistsInList(apiInstance, email, listId) {
-	try {
-	const x = await apiInstance.getContactInfo(email)
-		if (x.body.listIds.includes(listId)) {
-			return true
-		} 
-		return false 
-	} catch (err) {
-		return false
+	const res = await fetch(`https://api.sendinblue.com/v3/contacts/${email}`, {
+		method: 'GET',
+		headers: {
+			'api-key': apiKey,
+			Accept: 'application/json'
+		}
+	})
+	const data = await res.json()
+
+	if (data.listIds && data.listIds.includes(listId)) {
+		return true
 	}
+	return false
 }
 
 export async function post({ request }) {
 	const body = await request.json()
+	const apiKey = import.meta.env.VITE_SENDINBLUE_API_KEY
 
-	let apiInstance = new SibApiV3Sdk.ContactsApi()
+	console.log(body)
 
-	let apiKey = apiInstance.authentications['apiKey']
-	apiKey.apiKey = import.meta.env.VITE_SENDINBLUE_API_KEY
-
-	const exists = await checkIfContactExistsInList(apiInstance, body.email, 2)
-
-	if (exists) {
-		return {
-			status: 400,
-			body: {code: "already_exists"}
-		}
-	}
-
-	let createDoiContact = new SibApiV3Sdk.CreateDoiContact()
-
+	const createDoiContact = {}
 	createDoiContact.email = body.email
 	//createDoiContact.attributes = {"FNAME":"John","LNAME":"Doe"};
 	createDoiContact.includeListIds = [2]
 	createDoiContact.templateId = 22
 	createDoiContact.redirectionUrl = 'https://bitswired.com/bitsletter/thank-you'
 
-	return apiInstance.createDoiContact(createDoiContact).then(
-		function (res) {
-			console.log('API called successfully.')
+	console.log(createDoiContact)
 
-			return {
-				status: 200
-			}
-		},
-		function (error) {
-			console.error(error)
-			return {
-				status: error.statusCode,
-				body: error.body
-			}
+	const res = await fetch('https://api.sendinblue.com/v3/contacts/doubleOptinConfirmation', {
+		method: 'POST',
+		body: JSON.stringify(createDoiContact),
+		headers: {
+			'api-key': apiKey,
+			Accept: 'application/json',
+			'Content-Type': 'application/json'
 		}
-	)
+	})
+
+	const exists = await checkIfContactExistsInList(body.email, 2)
+	if (exists) {
+		return {
+			status: 400,
+			body: { code: 'already_exists' }
+		}
+	}
+
+	const data = await res.json()
+
+	if (res.status === 201) {
+		return {
+			status: 200
+		}
+	}
+
+	return {
+		status: res.status,
+		body: data
+	}
 }

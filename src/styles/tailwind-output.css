@@ -1325,6 +1325,11 @@ select {
   margin: 0px;
 }
 
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -1333,11 +1338,6 @@ select {
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
-}
-
-.my-4 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
 }
 
 .mt-\[80px\] {
@@ -1460,10 +1460,6 @@ select {
 
 .h-8 {
   height: 2rem;
-}
-
-.min-h-\[50px\] {
-  min-height: 50px;
 }
 
 .w-\[100\%\] {
