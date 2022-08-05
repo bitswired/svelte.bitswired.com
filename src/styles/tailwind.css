@@ -3,30 +3,75 @@
 @tailwind components;
 @tailwind utilities;
 
+
+html, body {
+	width: 100%;
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+	width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+	background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+	background: #1ddd78;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+	background: #555;
+  }
+
+
+
 @layer components {
+	.btn-solid-primary {
+		@apply rounded-lg py-2 px-4 font-semibold shadow-md;
+		@apply bg-primary-500 text-white;
+		@apply hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+	}
 
-    .btn-solid-primary {
-        @apply rounded-lg py-2 px-4 font-semibold shadow-md;
-		@apply  bg-primary-500 text-white;
-        @apply hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
-    }
+	.btn-solid-secondary {
+		@apply rounded-lg py-2 px-4 font-semibold shadow-md;
+		@apply bg-secondary-500 text-white;
+		@apply hover:bg-secondary-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+	}
 
-    .btn-solid-secondary {
-        @apply rounded-lg py-2 px-4 font-semibold shadow-md;
-		@apply  bg-secondary-500 text-white;
-        @apply hover:bg-secondary-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
-    }
+	.btn-outline-primary {
+		@apply rounded-lg py-2 px-4 font-semibold shadow-md;
+		@apply border-2 border-primary-500 bg-none text-primary-500;
+		@apply hover:border-primary-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+	}
 
-    .btn-outline-primary {
-        @apply rounded-lg py-2 px-4 font-semibold shadow-md;
-		@apply  bg-none text-primary-500 border-2 border-primary-500;
-        @apply hover:border-primary-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
-    }
+	.btn-outline-secondary {
+		@apply rounded-lg py-2 px-4 font-semibold shadow-md;
+		@apply border-2 border-secondary-500 bg-none text-secondary-500;
+		@apply hover:border-secondary-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+	}
 
-    .btn-outline-secondary {
-        @apply rounded-lg py-2 px-4 font-semibold shadow-md;
-		@apply  bg-none text-secondary-500 border-2 border-secondary-500;
-        @apply hover:border-secondary-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
-    }
+	.btn-link-primary {
+		@apply rounded-lg py-2 px-4 font-semibold;
+		@apply bg-none text-primary-500;
+		@apply hover:cursor-pointer;
+		@apply hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+	}
 
+	.btn-link-secondary {
+		@apply rounded-lg py-2 px-4 font-semibold;
+		@apply bg-none text-secondary-500;
+		@apply hover:cursor-pointer;
+		@apply hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+	}
+
+	.hero-text {
+		@apply m-auto bg-gradient-to-r from-primary-500 via-pink-500  to-secondary-500 bg-clip-text font-extrabold text-transparent;
+	}
 }

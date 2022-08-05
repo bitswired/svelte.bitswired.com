@@ -1,0 +1,84 @@
+
+> www.bitswired.com@0.0.1 build
+> yarn run tailwind:build && yarn run build:only
+
+yarn run v1.22.18
+$ TAILWIND_MODE=build NODE_ENV=production tailwindcss -c tailwind.config.cjs -m -i src/styles/tailwind.css -o src/styles/tailwind-output.css
+Done in 1.11s.
+yarn run v1.22.18
+$ svelte-kit build
+vite v2.9.8 building for production...
+transforming...
+✓ 66 modules transformed.
+rendering chunks...
+.svelte-kit/output/client/_app/manifest.json                                        3.84 KiB
+.svelte-kit/output/client/_app/error.svelte-5913d6bf.js                             1.56 KiB / gzip: 0.75 KiB
+.svelte-kit/output/client/_app/pages/about.svelte-845115b5.js                       0.15 KiB / gzip: 0.14 KiB
+.svelte-kit/output/client/_app/pages/blog/index.svelte-5c5b36bb.js                  3.56 KiB / gzip: 1.65 KiB
+.svelte-kit/output/client/_app/pages/index.svelte-9a31a456.js                       6.68 KiB / gzip: 2.78 KiB
+.svelte-kit/output/client/_app/start-d0339fa3.js                                    24.07 KiB / gzip: 8.78 KiB
+.svelte-kit/output/client/_app/chunks/index-a23686b2.js                             0.43 KiB / gzip: 0.30 KiB
+.svelte-kit/output/client/_app/chunks/index-7be10b6e.js                             0.79 KiB / gzip: 0.43 KiB
+.svelte-kit/output/client/_app/pages/__layout.svelte-451f52aa.js                    31.02 KiB / gzip: 10.46 KiB
+.svelte-kit/output/client/_app/pages/blog/_slug_/index.svelte-0d7c145b.js           24.84 KiB / gzip: 8.05 KiB
+.svelte-kit/output/client/_app/chunks/newsletter-store-533fbc6b.js                  0.17 KiB / gzip: 0.15 KiB
+.svelte-kit/output/client/_app/chunks/newsletter-open-action-2882ca91.js            2.92 KiB / gzip: 1.29 KiB
+.svelte-kit/output/client/_app/chunks/newsletter-form-8c351a7b.js                   3.04 KiB / gzip: 1.63 KiB
+.svelte-kit/output/client/_app/chunks/index-48e7da9e.js                             13.98 KiB / gzip: 5.83 KiB
+.svelte-kit/output/client/_app/chunks/common-seo-a2e406f7.js                        2.98 KiB / gzip: 1.11 KiB
+.svelte-kit/output/client/_app/assets/pages/blog/_slug_/index.svelte-aecd814c.css   0.08 KiB / gzip: 0.09 KiB
+.svelte-kit/output/client/_app/assets/newsletter-form-10bd6900.css                  1.89 KiB / gzip: 0.72 KiB
+.svelte-kit/output/client/_app/assets/newsletter-open-action-e0c6b0c8.css           0.11 KiB / gzip: 0.10 KiB
+.svelte-kit/output/client/_app/chunks/image-e89aea48.js                             0.98 KiB / gzip: 0.58 KiB
+.svelte-kit/output/client/_app/assets/pages/__layout.svelte-cc8ea44d.css            34.10 KiB / gzip: 6.48 KiB
+vite v2.9.8 building SSR bundle for production...
+transforming...
+✓ 69 modules transformed.
+rendering chunks...
+.svelte-kit/output/server/manifest.json                                      4.09 KiB
+.svelte-kit/output/server/index.js                                           75.64 KiB
+.svelte-kit/output/server/entries/endpoints/index.ts.js                      0.21 KiB
+.svelte-kit/output/server/entries/endpoints/sitemap.xml.ts.js                0.96 KiB
+.svelte-kit/output/server/entries/endpoints/blog/index.ts.js                 0.21 KiB
+.svelte-kit/output/server/entries/endpoints/api/newsletter/subscribe.ts.js   1.31 KiB
+.svelte-kit/output/server/entries/endpoints/blog/_slug_/index.ts.js          3.67 KiB
+.svelte-kit/output/server/entries/pages/__layout.svelte.js                   23.45 KiB
+.svelte-kit/output/server/entries/fallbacks/error.svelte.js                  0.72 KiB
+.svelte-kit/output/server/entries/pages/about.svelte.js                      0.20 KiB
+.svelte-kit/output/server/entries/pages/blog/_slug_/index.svelte.js          14.84 KiB
+.svelte-kit/output/server/entries/pages/blog/index.svelte.js                 1.90 KiB
+.svelte-kit/output/server/entries/pages/index.svelte.js                      3.39 KiB
+.svelte-kit/output/server/chunks/index-ea9a5280.js                           4.27 KiB
+.svelte-kit/output/server/chunks/index-b6d741e7.js                           3.92 KiB
+.svelte-kit/output/server/chunks/index-7be10b6e.js                           1.02 KiB
+.svelte-kit/output/server/chunks/newsletter-open-action-ed3f0276.js          1.10 KiB
+.svelte-kit/output/server/chunks/newsletter-form-62e5050d.js                 0.62 KiB
+.svelte-kit/output/server/chunks/image-1512c354.js                           1.17 KiB
+.svelte-kit/output/server/chunks/common-seo-444d3531.js                      2.67 KiB
+.svelte-kit/output/server/chunks/hooks-1c45ba0b.js                           0.00 KiB
+r_21_9
+r_21_9
+r_21_9
+r_21_9
+r_16_9
+r_4_3
+r_21_9
+r_21_9
+r_21_9
+r_21_9
+r_16_9
+r_21_9
+r_16_9
+r_21_9
+r_16_9
+r_16_9
+r_16_9
+null
+null
+
+Run npm run preview to preview your production build locally.
+
+> Using @sveltejs/adapter-auto
+  Could not detect a supported production environment. See https://kit.svelte.dev/docs/adapters to learn how to configure your app to run on the platform of your choosing
+  ✔ done
+Done in 5.49s.

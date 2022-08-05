@@ -6,7 +6,7 @@
 	import TwitterIcon from 'svelte-icons/fa/FaTwitter.svelte';
 </script>
 
-<div class="flex gap-6 text-primary-500">
+<div class="flex gap-6 text-primary-500 w-[200px]">
 	<a class="h-8" href={CONFIG.socials.discord} title="Discord Community" target="_blank">
 		<i >
 			<DiscordIcon />
